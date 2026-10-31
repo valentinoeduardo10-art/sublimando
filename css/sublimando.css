@@ -200,16 +200,7 @@ canvas.contorno {
     flex-wrap: wrap;
 }
 
-.item {
-  width: 45%; /* Dos productos por fila */
-  min-width: 280px;
-  margin: 0 15px;
-  background-color: #fff;
-  border: 1px solid #e3e8f0;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
+
 
 .item {
     width: calc(50% - 10px);
@@ -221,7 +212,12 @@ canvas.contorno {
     padding: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
-
+.item img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+  border-radius: 8px;
+}
 .item p {
   margin-top: 12px;
   font-size: 15px;
@@ -509,8 +505,5 @@ form input[type="submit"]:hover {
     .informacion-contacto {
         padding: 14px;
     }
-}
-/* use de guia la pagina de la escuela : https://frn.cvg.utn.edu.ar/my/courses.php
-pagina de market 24:https://share.google/TuTQ4OtKGb9phdgSt
-pagina de cueva bajonera: https://share.google/Vqk3beLOGIpP8DExL
-*/
+
+  }
