@@ -374,6 +374,89 @@ form input[type="submit"]:hover {
 }
 
 
+/* FOOTER */
+.footer {
+    width: 100%;
+    background-color: #252525;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px 15px;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+.footer-contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer h3 {
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.footer > .footer-contenido > p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-redes a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-redes a:hover {
+    color: #929aed;
+}
+
+.footer-redes img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.footer-derechos {
+    border-top: 1px solid #555555;
+    margin-top: 25px;
+    padding-top: 12px;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.footer-derechos p {
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 25px 12px 15px;
+    }
+
+    .footer-redes {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .footer-redes a {
+        font-size: 13px;
+    }
+}
+
+
+
 @media screen and (max-width: 380px) {
 
     .contenedor-principal {
