@@ -377,7 +377,7 @@ form input[type="submit"]:hover {
 /* FOOTER */
 .footer {
     width: 100%;
-    background-color: #252525;
+    background-color: #6b1ceb;
     color: #ffffff;
     text-align: center;
     padding: 30px 20px 15px;
@@ -429,7 +429,7 @@ form input[type="submit"]:hover {
 }
 
 .footer-derechos {
-    border-top: 1px solid #555555;
+    border-top: 1px solid #353434;
     margin-top: 25px;
     padding-top: 12px;
     color: #aaaaaa;
