@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 /* Color de fondo para los laterales */
 body {
   background-color: #929aed; /* Tono azul/violeta de los bordes laterales */
@@ -15,29 +18,16 @@ img {
 
 
 
-/* Adaptación automática para pantallas menores a 768px (Celulares y tablets) */
-@media (max-width: 768px) {
-    /* Si usas contenedores flexibles con filas, los pasa a columnas */
-    .contenedor, .nav-container, .grid, .flex {
-        flex-direction: column !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
 
-    /* Hace que cualquier columna o tarjeta ocupe todo el ancho en celulares */
-    .columna, .card, .seccion {
-        width: 100% !important;
-        margin-bottom: 1rem;
-    }
-}
 /* Tarjeta o contenedor central estilo formulario */
 .contenedor-principal {
-  max-width: 1000px;
-  margin: 30px auto;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
 /* --- ENCABEZADO Y LOGO DE BORDE A BORDE --- */
@@ -148,9 +138,10 @@ header ul li a:hover {
 
 /* Grid de tarjetas para Nosotros */
 .caracteristicas-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columnas */
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
 /* Tablas y Canvas */
@@ -275,6 +266,122 @@ form input[type="submit"]:hover {
   text-decoration: none;
   color: #5c67f2;
   font-weight: bold;
+}
+/* ==================================
+   DISEÑO RESPONSIVO PARA CELULARES
+================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Contenedor principal */
+    .contenedor-principal {
+        width: calc(100% - 24px);
+        margin: 12px auto;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    /* Encabezado */
+    header {
+        margin: -16px -16px 20px -16px;
+    }
+
+    /* Menú */
+    header ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+
+    header ul li a {
+        padding: 9px 14px;
+        font-size: 14px;
+    }
+
+    /* Sección Nosotros */
+    #nosotros {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Cuadros de información */
+    .bloque {
+        width: 100%;
+        max-width: 540px;
+        margin: 18px auto;
+        padding: 18px;
+      
+    }
+
+    /* Historia */
+    .historia {
+        max-width: 540px;
+        margin: 0 auto 25px;
+    }
+
+    /* Tarjetas inferiores */
+    .caracteristicas-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2px;
+    }
+
+    .caracteristicas-grid .bloque {
+        width: 100%;
+        max-width: 540px;
+    }
+
+    /* Textos */
+    .bloque p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Tabla */
+    table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Títulos */
+    #nosotros h2 {
+        font-size: 24px;
+    }
+
+    .bloque h3 {
+        font-size: 17px;
+    }
+}
+
+/* Celulares pequeños */
+@media screen and (max-width: 380px) {
+
+    .contenedor-principal {
+        padding: 12px;
+    }
+
+    header {
+        margin: -12px -12px 15px -12px;
+    }
+
+    header ul li a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+ .bloque {
+        padding: 18px;
+    }
+    
 }
 /* use de guia la pagina de la escuela : https://frn.cvg.utn.edu.ar/my/courses.php
 pagina de market 24:https://share.google/TuTQ4OtKGb9phdgSt
