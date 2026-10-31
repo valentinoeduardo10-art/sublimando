@@ -1,0 +1,282 @@
+/* Color de fondo para los laterales */
+body {
+  background-color: #929aed; /* Tono azul/violeta de los bordes laterales */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+   overflow-x: hidden;
+}
+/* Evitar que las imágenes y elementos se salgan de la pantalla */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* Adaptación automática para pantallas menores a 768px (Celulares y tablets) */
+@media (max-width: 768px) {
+    /* Si usas contenedores flexibles con filas, los pasa a columnas */
+    .contenedor, .nav-container, .grid, .flex {
+        flex-direction: column !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Hace que cualquier columna o tarjeta ocupe todo el ancho en celulares */
+    .columna, .card, .seccion {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+}
+/* Tarjeta o contenedor central estilo formulario */
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* --- ENCABEZADO Y LOGO DE BORDE A BORDE --- */
+header {
+  background-color: #ffffff; /* Asegura el fondo blanco detrás del logo */
+  text-align: center;
+  padding: 0;                /* Quita el relleno para que pegue a las paredes */
+  margin: -30px -30px 20px -30px; /* Expande la imagen hacia los bordes del contenedor */
+  border-top-left-radius: 12px;   /* Mantiene el redondeado superior del contenedor */
+  border-top-right-radius: 12px;
+  overflow: hidden;               /* Evita que las esquinas del logo sobresalgan */
+}
+
+.logo {
+  width: 100%;       /* Hace que el logo ocupe el 100% del ancho disponible */
+  max-width: 100%;   /* Quita el límite anterior para que llegue hasta los bordes */
+  height: auto;      /* Mantiene la proporción de la imagen sin deformarla */
+  display: block;    /* Elimina espacios o huecos blancos no deseados abajo */
+}
+
+/* Reajuste para que el menú de navegación conserve espacio interno */
+header ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 0 20px 0; /* Espaciado cómodo para los botones del menú */
+  margin: 0;
+  background-color: #ffffff;
+} 
+
+header ul li {
+  display: inline;
+}
+
+/* Botones del menú con fondo blanco y estilo flotante */
+header ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 20px; /* Estilo píldora */
+  border: 1px solid #e0e0e0;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+header ul li a:hover {
+  background-color: #5c67f2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(92, 103, 242, 0.3);
+}
+
+/* Sección Nosotros */
+#nosotros {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+#nosotros h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c2c2c;
+}
+
+.historia {
+  margin-bottom: 40px;
+}
+
+/* Enmarcado y bordes suaves para los bloques de texto/formulario */
+.bloque {
+  position: relative;
+  margin: 25px 0;
+  padding: 24px;
+  background-color: #fcfcfd;
+  border: 1px solid #e3e8f0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloque:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(146, 154, 237, 0.15);
+}
+
+.bloque h3 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #444;
+  border-bottom: 2px solid #d8dbfc;
+  padding-bottom: 6px;
+  display: inline-block;
+  width: 100%;
+}
+
+.bloque p, .bloque table {
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+/* Grid de tarjetas para Nosotros */
+.caracteristicas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas */
+  gap: 20px;
+}
+
+/* Tablas y Canvas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+}
+
+table th {
+  background-color: #edf0fc;
+  color: #333;
+  font-weight: bold;
+}
+
+canvas.contorno {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* No bloquea los clics en el texto */
+}
+
+/* Catálogo de Productos */
+.productos {
+  padding: 20px;
+  text-align: center;
+}
+
+.productos h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.fila {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.item {
+  width: 45%; /* Dos productos por fila */
+  min-width: 280px;
+  margin: 0 15px;
+  background-color: #fff;
+  border: 1px solid #e3e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.item img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+  border-radius: 8px;
+}
+
+.item p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #555;
+  text-align: left;
+}
+
+/* Formulario de Pedidos y Contacto */
+.formulario-seccion, .informacion-contacto {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #fcfcfd;
+  border: 1px solid #e3e8f0;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form input[type="submit"] {
+  background-color: #5c67f2;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #4a54e1;
+  transform: translateY(-1px);
+}
+
+.bloque-info {
+  margin-bottom: 30px;
+}
+
+.redes-sociales {
+  list-style: none;
+  padding: 0;
+}
+
+.redes-sociales li {
+  margin: 10px 0;
+}
+
+.redes-sociales a {
+  text-decoration: none;
+  color: #5c67f2;
+  font-weight: bold;
+}
+/* use de guia la pagina de la escuela : https://frn.cvg.utn.edu.ar/my/courses.php
+pagina de market 24:https://share.google/TuTQ4OtKGb9phdgSt
+pagina de cueva bajonera: https://share.google/Vqk3beLOGIpP8DExL
+*/
