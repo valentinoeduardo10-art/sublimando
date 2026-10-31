@@ -1,7 +1,14 @@
 * {
     box-sizing: border-box;
 }
+/* Encabezados de las páginas secundarias */
+body > header:not(.contenedor-principal) {
+    margin: 0 0 20px 0;
+    border-radius: 0;
+}
+
 /* Color de fondo para los laterales */
+
 body {
   background-color: #929aed; /* Tono azul/violeta de los bordes laterales */
   margin: 0;
@@ -185,9 +192,12 @@ canvas.contorno {
 }
 
 .fila {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .item {
@@ -201,11 +211,15 @@ canvas.contorno {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.item img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover; /* Mantiene la proporción sin deformar */
-  border-radius: 8px;
+.item {
+    width: calc(50% - 10px);
+    min-width: 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #e3e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .item p {
@@ -363,7 +377,7 @@ form input[type="submit"]:hover {
     }
 }
 
-/* Celulares pequeños */
+
 @media screen and (max-width: 380px) {
 
     .contenedor-principal {
@@ -382,6 +396,119 @@ form input[type="submit"]:hover {
         padding: 18px;
     }
     
+
+}
+
+.mapa-contenedor {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mapa-contenedor iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    border: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+   
+
+    #contacto-page {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .informacion-contacto {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .mapa-contenedor {
+        width: 100%;
+    }
+
+    .mapa-contenedor iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    
+
+    .productos {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 16px;
+    }
+
+    .fila {
+        gap: 16px;
+    }
+
+    .item {
+        width: calc(50% - 8px);
+        min-width: 0;
+    }
+
+    .item img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    .item p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+   
+
+    .servicios-corporativos {
+        padding: 25px 16px !important;
+        margin-top: 30px !important;
+    }
+
+    .servicios-corporativos > div {
+        width: 100%;
+    }
+
+    .servicios-corporativos p {
+        font-size: 14px !important;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    /* Una tarjeta por fila */
+    .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .item img {
+        height: 280px;
+    }
+
+    /* Mapas */
+    .informacion-contacto {
+        padding: 14px;
+    }
 }
 /* use de guia la pagina de la escuela : https://frn.cvg.utn.edu.ar/my/courses.php
 pagina de market 24:https://share.google/TuTQ4OtKGb9phdgSt
